@@ -1,0 +1,18 @@
+h1 {
+  color:red;
+  text-align:center;
+  font-size: 5em;
+}
+
+p {
+ text-align:center;
+}
+
+body {
+    background-color: #0B3E07
+}
+
+div {
+   color:blue;
+   background-color:grey;
+   }
