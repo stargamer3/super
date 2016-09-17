@@ -1,1 +1,81 @@
 # super
+== What is it ==
+
+DomainCLI is a simple command-line interface for registering domain names:
+
+  gdb@inferno:~$ domaincli check domaincli.com
+  Checking status of domaincli.com... Available!
+
+  gdb@inferno:~$ domaincli register domaincli.com
+  ***********************************************
+  * Your total comes to $12 (1 year x 1 domain) *
+  ***********************************************
+  Using American Express ending in 7314 and expiring on 02/2016
+  Are you cool with this purchase? [Yn] y
+  Trying to register domaincli.com... success!
+
+  You are now the proud owner of
+    domaincli.com
+
+  \--> Congratulations!  You now own domaincli.com.
+
+== Client Installation ==
+
+Run 'sudo easy_install domaincli'.  That's it.  You can immediately
+start running domaincli commands such as 'domaincli check domaincli.com'.
+
+By default, you'll be using the domaincli.com servers to register domains, but
+you're welcome to set up your own DomainCLI server instance as described below.
+
+== Server Installation ==
+
+Currently, the domain registration functionality is built on top of
+the internet.bs API.  Payment functionality is built on the stripe.com
+API.  In order to set up a domaincli server, you'll need an account on
+both.
+
+Signing up for an internet.bs API reseller account is pretty painless,
+but it does require a $65 minimum deposit to get up and running -
+sorry.
+
+Stripe is currently in a private beta, but if you email me
+(gdb@gregbrockman.com) I'll see if I can get you an invite.
+
+Copy server/conf.sample.yaml to server/conf.yaml, add a test-mode API
+key from Stripe (the internet.bs test credentials will work), and
+you'll be good to go (modulo dependencies).  Run
+'server/bin/domaincli-server' to start the server.
+
+== Current functionality ==
+
+Currently one can query whether a domain is owned, purchase a domain, and set
+nameservers.  All domains (currently com, info, net, org, us) are $12.
+
+== Future directions ==
+
+- Allow creation of DNS records from the command line
+- Automatically set up Google Apps For Your Domain
+- Improve UI and onboarding flow (shouldn't prompt for nameservers during initial
+  domain purchase, etc.)
+- Tons of generic domain actions (list domains, transfer domains).
+- Suggest possible domain names you might want to buy (such as by concatenating
+  random words).
+- Collect email address so people can be emailed with domain renewal reminders.
+
+This project is mainly a proof-of-concept, so let me know if there are any
+particularly interesting features you'd like to see developed.
+
+== Contact ==
+
+Feel free to contact me at gdb@gregbrockman.com with comments, questions,
+suggestions, complaints, angry letters, happy letters, apathetic letters, musings
+about life, and the like.
+
+== Website ==
+
+The website for the project / service is http://domaincli.com
+
+== License ==
+
+DomainCLI is released under the MIT license.  Feel free to do whatever you want
+with the code.  Patches welcome.
