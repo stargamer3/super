@@ -1,0 +1,6 @@
+internet_bs:
+  api_key: testapi
+  password: testpass
+
+stripe:
+  api_key:
